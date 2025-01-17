@@ -2,7 +2,6 @@
 import { client } from '@/sanity/lib/client';
 import { Product } from '@/app/types/page';
 import ProductCard from '@/components/ProductCard';
-import Link from 'next/link';
 import HeroSection from './Hero';
 
 export default async function Home() {
@@ -11,16 +10,6 @@ export default async function Home() {
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section
-      <div className="bg-blue-600 text-white py-20">
-        <div className="container mx-auto text-center">
-          <h1 className="text-5xl font-bold mb-4">Your Health, Your Way</h1>
-          <p className="text-xl mb-8">Discover smart scales and fitness products tailored for you.</p>
-          <Link href="/products" className="bg-white text-blue-600 px-8 py-3 rounded-lg font-semibold">
-            Shop Now
-          </Link>
-        </div>
-      </div> */}
 
         <HeroSection />
       {/* Featured Products */}

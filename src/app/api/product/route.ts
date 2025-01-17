@@ -1,8 +1,15 @@
-import { NextApiRequest, NextApiResponse } from 'next';
-import { client } from '../../../sanity/lib/client';
+import { NextResponse } from 'next/server';
+import { client } from '@/sanity/lib/client';
 
-export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  const query = `*[_type == "product"]`;
+export async function GET() {
+  const query = `*[_type == "product"]{
+    _id,
+    name,
+    price,
+    stockQuantity,
+    category,
+    "image": image.asset->url
+  }`;
   const products = await client.fetch(query);
-  res.status(200).json(products);
+  return NextResponse.json(products);
 }

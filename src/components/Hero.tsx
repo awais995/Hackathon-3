@@ -8,7 +8,7 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 bg-cover bg-center"
         style={{
-          backgroundImage: "url('/hero-image.jpg')", // Replace with your image path
+          backgroundImage: "url('/hero-image.webp')", // Replace with your image path
         }}
       >
         {/* Overlay for better text readability */}
@@ -18,7 +18,7 @@ export default function HeroSection() {
       {/* Hero Content */}
       <div className="relative z-10 px-4 sm:px-6 lg:px-8">
         <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-6">
-          Welcome to My Marketplace
+          Welcome to Smart Scale Marketplace
         </h1>
         <p className="text-lg sm:text-xl md:text-2xl mb-8 max-w-2xl mx-auto">
           Discover the best products and services tailored just for you. Shop now and experience a world of quality and convenience.
