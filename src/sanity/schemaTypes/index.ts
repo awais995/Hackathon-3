@@ -6,5 +6,5 @@ import review from './review'
 import supplier from './supplier'
 
 export const schema: { types: SchemaTypeDefinition[] } = {
-  types: [product, order, customer, review, supplier],
+  types: [product],
 }
