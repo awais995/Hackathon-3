@@ -13,15 +13,15 @@ interface Product {
   image: string;
 }
 
-export default function ProductPage({ params }: { params: { slug: string } }) {
+export default function ProductPage({ params }: { params: { id: string } }) {
   const [product, setProduct] = useState<Product | null>(null);
   const [loading, setLoading] = useState<boolean>(true);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
-    const fetchProductBySlug = async () => {
+    const fetchProductById = async () => {
       try {
-        const response = await fetch(`/api/products/${params.slug}`);
+        const response = await fetch(`/api/products/${params.id}`);
         if (!response.ok) throw new Error("Product not found");
         const data = await response.json();
         setProduct(data);
@@ -32,8 +32,8 @@ export default function ProductPage({ params }: { params: { slug: string } }) {
       }
     };
 
-    fetchProductBySlug();
-  }, [params.slug]);
+    fetchProductById();
+  }, [params.id]);
 
   if (loading) {
     return <p className="container mx-auto p-8">Loading product...</p>;

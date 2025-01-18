@@ -21,7 +21,7 @@ const ProductPage = () => {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch('/api/product');
+        const response = await fetch('/api/products');
         if (!response.ok) {
           throw new Error('Failed to fetch products');
         }
@@ -50,7 +50,7 @@ const ProductPage = () => {
       <h1 className="text-2xl font-bold mb-4">Products Data</h1>
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
         {products.map((product) => (
-          <Link key={product._id} href={`/shop/${product._id}`} passHref>
+          <Link key={product._id} href={`/products/${product._id}`} passHref>
             <div className="border p-4 rounded-lg shadow cursor-pointer hover:shadow-lg transition-shadow">
               {product.image && (
                 <Image
